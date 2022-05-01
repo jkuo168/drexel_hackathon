@@ -12,9 +12,9 @@ export default function InstructionPage() {
   const text = [
     "Fluffy is a 6-month year old corgi",
     "Fluffy loves to eat",
-    "Your goal is to feed Fluffy a variety of food",
+    "Your goal is to feed Fluffy a variety of different foods",
     "However, you must be careful what you feed Fluffy",
-    "Some things like chocolate makes Fluffy very sick",
+    "Some things like chocolate make Fluffy very sick",
     "Other things like chicken make Fluffy very happy",
     "Good luck!",
   ];

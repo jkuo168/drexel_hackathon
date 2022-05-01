@@ -4,9 +4,10 @@ import { Box, Button, Typography, IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import InfoPage from "./InfoPage";
 
-export default function FeedPage() {
+export default function FeedPage(props) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [healthy, setHealthy] = useState(null);
+  const friend = props.friend;
 
   // On file select (from the pop up)
   const onFileChange = (event) => {
@@ -16,30 +17,7 @@ export default function FeedPage() {
 
   // On file upload (click the upload button)
   const onFileUpload = () => {
-    // // Create an object of formData
-    // const formData = new FormData();
-
-    // // Update the formData object
-    // formData.append("myFile", selectedFile, selectedFile);
-
-    // Request made to the backend api
-    // Send formData object
-    const file = {
-      lastModified: selectedFile.lastModified,
-      lastModifiedDate: selectedFile.lastModifiedDate,
-      name: selectedFile.name,
-      size: selectedFile.size,
-      type: selectedFile.type,
-    };
-
-    axios
-      .get("http://localhost:4000/uploadfile", {
-        params: { info: JSON.stringify(file) },
-      })
-      .then((response) => {
-        setHealthy(true);
-        console.log(response);
-      });
+    setHealthy(true);
   };
 
   // File content to be displayed after
@@ -60,7 +38,7 @@ export default function FeedPage() {
       );
     } else {
       return (
-        <Box sx={{ mt: 30 }}>
+        <Box sx={{ mt: 25 }}>
           <Typography>Choose before Pressing the Upload button</Typography>
         </Box>
       );
@@ -68,7 +46,7 @@ export default function FeedPage() {
   };
 
   if (healthy) {
-    return <InfoPage />;
+    return <InfoPage data={selectedFile} />;
   }
 
   return (
@@ -81,10 +59,22 @@ export default function FeedPage() {
         backgroundImage: `url("https://i.stack.imgur.com/nItQK.png")`,
       }}
     >
-      <Box sx={{ ml: 3, mt: 2 }}>
+      <Box
+        sx={{
+          ml: 3,
+          mt: 2,
+          display: "flex",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
         <IconButton href="/">
           <ArrowBackIcon />
         </IconButton>
+        <Box sx={{ display: "flex", flexGrow: 1 }}></Box>
+        <Box sx={{ pr: 5 }}>
+          {friend ? <img src={friend} style={{ height: "50px" }} /> : <></>}
+        </Box>
       </Box>
       <Box sx={{ textAlign: "center" }}>
         <Typography sx={{ mt: 5 }} variant="h5">
@@ -105,22 +95,10 @@ export default function FeedPage() {
           <Button
             variant="contained"
             onClick={onFileUpload}
-            sx={{ mt: selectedFile ? 10 : 30 }}
+            sx={{ mt: selectedFile ? 10 : 25 }}
           >
             Feed Fluffy
           </Button>
-          <div
-            style={{
-              diplay: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img alt="lion" width="400" src={"lion.gif"}></img>
-            <img alt="trex" width="350" src={"trex.gif"}></img>
-            <img alt="koala" width="350" src={"koala.gif"}></img>
-            <img alt="fox" width="400" src={"fox.gif"}></img>
-          </div>
         </Box>
       </Box>
     </Box>
