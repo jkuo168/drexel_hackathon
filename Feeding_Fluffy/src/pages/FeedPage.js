@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Box, Button, Typography, IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import InfoPage from "./InfoPage";
 
 export default function FeedPage() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [healthy, setHealthy] = useState(null);
 
   // On file select (from the pop up)
   const onFileChange = (event) => {
@@ -35,6 +37,7 @@ export default function FeedPage() {
         params: { info: JSON.stringify(file) },
       })
       .then((response) => {
+        setHealthy(true);
         console.log(response);
       });
   };
@@ -63,6 +66,10 @@ export default function FeedPage() {
       );
     }
   };
+
+  if (healthy) {
+    return <InfoPage />;
+  }
 
   return (
     <Box
@@ -100,7 +107,7 @@ export default function FeedPage() {
             onClick={onFileUpload}
             sx={{ mt: selectedFile ? 10 : 30 }}
           >
-            Upload Image
+            Feed Fluffy
           </Button>
         </Box>
       </Box>
