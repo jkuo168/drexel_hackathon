@@ -109,7 +109,13 @@ export default function FeedPage() {
           >
             Feed Fluffy
           </Button>
-          <div style={{diplay: "flex", alignItems: "center", justifyContent: "center"}}>
+          <div
+            style={{
+              diplay: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <img alt="lion" width="400" src={"lion.gif"}></img>
             <img alt="trex" width="350" src={"trex.gif"}></img>
             <img alt="koala" width="350" src={"koala.gif"}></img>

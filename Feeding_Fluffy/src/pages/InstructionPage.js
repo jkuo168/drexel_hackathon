@@ -10,12 +10,12 @@ export default function InstructionPage() {
   const [info, setInfo] = useState(0);
 
   const text = [
-    "Fluffy is a 5 year old corgi",
+    "Fluffy is a 6-month year old corgi",
     "Fluffy loves to eat",
     "Your goal is to feed Fluffy a variety of food",
     "However, you must be careful what you feed Fluffy",
     "Some things like chocolate makes Fluffy very sick",
-    "Other things like chicken makes Fluffy very happy",
+    "Other things like chicken make Fluffy very happy",
     "Good luck!",
   ];
 
