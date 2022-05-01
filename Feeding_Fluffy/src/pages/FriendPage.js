@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, IconButton } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import FeedPage from "./FeedPage";
 
 export default function FriendPage(props) {
@@ -13,29 +14,52 @@ export default function FriendPage(props) {
   return (
     <Box
       sx={{
+        overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         height: "100vh",
         width: "100vw",
         backgroundSize: "cover",
         backgroundImage: `url("https://i.stack.imgur.com/nItQK.png")`,
-        alignItems: "center",
-        justifyContent: "center",
       }}
     >
-      <Typography variant="h4" sx={{ mb: 3 }}>
-        {data.bottom}
-      </Typography>
-      <img src={data.friend} style={{ height: "30%" }} />
-      <Button
-        variant="contained"
-        onClick={() => {
-          setFeed(true);
+      <Box
+        sx={{
+          ml: 3,
+          mt: 2,
+          display: "flex",
+          alignItems: "center",
+          width: "100%",
         }}
-        sx={{ mt: 10 }}
       >
-        Feed Fluffy Again
-      </Button>
+        <IconButton href="/">
+          <ArrowBackIcon />
+        </IconButton>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          alignItems: "center",
+          textAlign: "center",
+          pt: 20,
+        }}
+      >
+        <Typography variant="h4" sx={{ mb: 3 }}>
+          {data.bottom}
+        </Typography>
+        <img src={data.friend} style={{ height: "30%" }} />
+        <Button
+          variant="contained"
+          onClick={() => {
+            setFeed(true);
+          }}
+          sx={{ mt: 10 }}
+        >
+          Feed Fluffy Again
+        </Button>
+      </Box>
     </Box>
   );
 }
