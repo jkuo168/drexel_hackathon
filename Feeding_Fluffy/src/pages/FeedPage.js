@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, IconButton } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function FeedPage() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -47,13 +48,16 @@ export default function FeedPage() {
       const image = URL.createObjectURL(selectedFile);
 
       return (
-        <Box>
-          <img src={image} style={{ height: "300px" }}></img>
+        <Box sx={{ mt: 10 }}>
+          <img
+            src={image}
+            style={{ height: "300px", borderRadius: "4px" }}
+          ></img>
         </Box>
       );
     } else {
       return (
-        <Box>
+        <Box sx={{ mt: 30 }}>
           <Typography>Choose before Pressing the Upload button</Typography>
         </Box>
       );
@@ -65,30 +69,41 @@ export default function FeedPage() {
       sx={{
         display: "flex",
         height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
         flexDirection: "column",
         backgroundSize: "cover",
         backgroundImage: `url("https://i.stack.imgur.com/nItQK.png")`,
       }}
     >
-      <Typography>
-        Input an image of the food you would like to feed fluffy
-      </Typography>
-      <Button variant="outlined" component="label">
-        Upload File
-        <input
-          type="file"
-          hidden
-          multiple
-          accept="image/*"
-          onChange={onFileChange}
-        />
-      </Button>
-      {fileData()}
-      <Button variant="outlined" onClick={onFileUpload}>
-        Upload
-      </Button>
+      <Box sx={{ ml: 3, mt: 2 }}>
+        <IconButton href="/">
+          <ArrowBackIcon />
+        </IconButton>
+      </Box>
+      <Box sx={{ textAlign: "center" }}>
+        <Typography sx={{ mt: 5 }} variant="h5">
+          Input an image of the food you would like to feed Fluffy
+        </Typography>
+        <Box>
+          <Button component="label" sx={{ mt: 3 }} variant="contained">
+            Select Image
+            <input
+              type="file"
+              hidden
+              multiple
+              accept="image/*"
+              onChange={onFileChange}
+            />
+          </Button>
+          {fileData()}
+          <Button
+            variant="contained"
+            onClick={onFileUpload}
+            sx={{ mt: selectedFile ? 10 : 30 }}
+          >
+            Upload Image
+          </Button>
+        </Box>
+      </Box>
     </Box>
   );
 }
