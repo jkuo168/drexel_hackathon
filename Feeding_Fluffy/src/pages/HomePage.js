@@ -22,8 +22,8 @@ export default function HomePage() {
         justifyContent: "center",
       }}
     >
-      <Typography variant="h2" sx={{ mb: 3 }}>
-        Welcome to Feeding Fluffy
+      <Typography variant="h2" sx={{ mb: 4 }}>
+        Welcome to HealthyPets
       </Typography>
       <img
         src="https://i.pinimg.com/originals/95/dd/60/95dd6052a734c650ccc719a5e11bd1b5.gif"
@@ -32,7 +32,7 @@ export default function HomePage() {
       <Button
         variant="contained"
         color="primary"
-        sx={{ mt: 5 }}
+        sx={{ mt: 6 }}
         onClick={() => {
           setShow(true);
         }}

@@ -43,7 +43,7 @@ export default function FriendPage(props) {
           width: "100%",
           alignItems: "center",
           textAlign: "center",
-          pt: 20,
+          pt: 15,
         }}
       >
         <Typography variant="h4" sx={{ mb: 3 }}>

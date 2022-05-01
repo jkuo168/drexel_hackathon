@@ -53,7 +53,8 @@ export default function ResultPage(props) {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          mt: 25,
+          mt: 15,
+          mr: 10,
         }}
       >
         <Typography variant="h5" sx={{ mb: 2 }}>
