@@ -88,6 +88,14 @@ export default function FeedPage() {
       <Button variant="outlined" onClick={onFileUpload}>
         Upload
       </Button>
+      <div style={{diplay: "flex", alignItems: "center", justifyContent: "center"}}>
+        <img alt="lion" width="400" src={"lion.gif"}></img>
+        <img alt="unicorn" width="800" src={"unicorn.gif"}></img>
+        <img alt="dog" width="400" src={"dog.gif"}></img>
+        <img alt="trex" width="400" src={"trex.gif"}></img>
+        <img alt="koala" width="400" src={"koala.gif"}></img>
+        <img alt="fox" width="400" src={"fox.gif"}></img>
+      </div>
     </Box>
   );
 }
