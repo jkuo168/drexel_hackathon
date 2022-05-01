@@ -46,7 +46,6 @@ export default function FeedPage() {
       const MAX_WIDTH = 300;
       const image = URL.createObjectURL(selectedFile);
 
-      console.log(image);
       return (
         <Box>
           <img src={image} style={{ height: "300px" }}></img>
@@ -69,6 +68,8 @@ export default function FeedPage() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        backgroundSize: "cover",
+        backgroundImage: `url("https://i.stack.imgur.com/nItQK.png")`,
       }}
     >
       <Typography>
