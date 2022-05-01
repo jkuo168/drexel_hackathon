@@ -1533,6 +1533,13 @@
     prop-types "^15.7.2"
     react-is "^17.0.2"
 
+"@mui/icons-material@^5.6.2":
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.6.2.tgz#239c40fc5841dc7c6af7d00e4e988550de170fcd"
+  integrity sha512-9QdI7axKuBAyaGz4mtdi7Uy1j73/thqFmEuxpJHxNC7O8ADEK1Da3t2veK2tgmsXsUlAHcAG63gg+GvWWeQNqQ==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
+
 "@mui/material@^5.6.3":
   version "5.6.3"
   resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.6.3.tgz#a5b6cd1b0417fca67a65172530ff5573ab7bc453"
@@ -6069,6 +6076,11 @@ makeerror@1.0.12:
   integrity sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==
   dependencies:
     tmpl "1.0.5"
+
+material-icons@^1.10.9:
+  version "1.10.9"
+  resolved "https://registry.yarnpkg.com/material-icons/-/material-icons-1.10.9.tgz#a255a1cc096d53db77354ad1182f532513e05e0b"
+  integrity sha512-bix9hlteHhaO/I2mfLjs5XeJG31E72p+gTj8BXt/1bwRnry8FCot5CVeHBhnkgGEBdiI+DphRYxB3uTDxZ9stg==
 
 mdn-data@2.0.14:
   version "2.0.14"

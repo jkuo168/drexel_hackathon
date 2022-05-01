@@ -1,33 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
+import InstructionPage from "./InstructionPage";
 
 export default function HomePage() {
+  const [show, setShow] = useState(false);
+  if (show) {
+    return <InstructionPage />;
+  }
+
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
         height: "100vh",
+        width: "100vw",
+        backgroundSize: "cover",
+        backgroundImage: `url("https://i.stack.imgur.com/nItQK.png")`,
+        textAlign: "center",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Box sx={{ textAlign: "center" }}>
-        <Typography variant="h3">Welcome to Feeding Fluffy</Typography>
-        <Typography>
-          Your goal is to keepy Fluffy alive by feeding him food.
-        </Typography>
-        <Typography>
-          However, you must be careful what you feed him! Any unhealthy food can
-          easily kill Fluffy.
-        </Typography>
-        <Typography>To begin, click the button below. Good Luck!</Typography>
-      </Box>
-      <Box sx={{ mt: 3 }}>
-        <Button variant="outlined" href="\feed">
-          Begin
-        </Button>
-      </Box>
+      <Typography variant="h2" sx={{ mb: 3 }}>
+        Welcome to Feeding Fluffy
+      </Typography>
+      <img
+        src="https://i.pinimg.com/originals/95/dd/60/95dd6052a734c650ccc719a5e11bd1b5.gif"
+        style={{ height: "30%", borderRadius: "4px" }}
+      />
+      <Button
+        variant="contained"
+        color="primary"
+        sx={{ mt: 5 }}
+        onClick={() => {
+          setShow(true);
+        }}
+      >
+        Begin
+      </Button>
     </Box>
   );
 }
